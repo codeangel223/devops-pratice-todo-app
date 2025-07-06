@@ -8,7 +8,7 @@ pipeline {
         DOCKER_IMAGE = 'todo-app-frontend'  // Nom de l'image Docker à construire
         DOCKER_USERNAME = 'codeangel92'  // Nom d'utilisateur Docker Hub
         DOCKER_CONTAINER = 'todo_app_frontend'  // Nom du conteneur déployé sur le VPS
-        DOCKER_CREDENTIALS = credentials('docker-hub-credentials-id')  // Identifiants Docker Hub
+        DOCKER_CREDENTIALS_PSW = credentials('docker-hub-credentials-id')  // Identifiants Docker Hub
         IMAGE_VERSION = '1'  // Version dynamique basée sur le numéro de build Jenkins
     }
 
@@ -40,7 +40,7 @@ pipeline {
                     // Connexion à Docker Hub
                     bat """
                         # Authentifie le Docker daemon local avec les identifiants Jenkins
-                        docker login -u ${DOCKER_CREDENTIALS_USR} -p ${DOCKER_CREDENTIALS_PSW}
+                        docker login -u ${DOCKER_USERNAME} -p ${DOCKER_CREDENTIALS_PSW}
                         echo 'Docker login successful'
                     """
 
