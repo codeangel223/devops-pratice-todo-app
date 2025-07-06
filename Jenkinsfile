@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Construit l'image Docker localement sur le VPS
-                    bat 'docker build -t todo-app .'
+                    bat 'docker build -t todo-app-frontend .'
                 }
             }
         }
