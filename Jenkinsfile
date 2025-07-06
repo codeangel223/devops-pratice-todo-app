@@ -57,6 +57,9 @@ pipeline {
                     """
 
                     // Déploiement local sur le VPS
+                    // Se connecter à un VPS
+                    // Pull l'image depuis docker hib
+
                     bat """
                         # Arrête le conteneur existant s'il existe
                         docker compose down
