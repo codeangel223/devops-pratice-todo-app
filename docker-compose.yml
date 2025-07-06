@@ -5,7 +5,7 @@ services:
     ports:
       - 3005:3000
   frontend:
-    image: todo-app
+    image: codeangel92/todo-app-frontend:1
     container_name: todo_app_frontend
     environment:
       - VITE_API_URL=http://localhost:3005
