@@ -1,0 +1,13 @@
+services:
+  backend:
+    image: todo-app-bakend
+    container_name: todo_app_backend
+    ports:
+      - 3005:3000
+  frontend:
+    image: todo-app
+    container_name: todo_app_frontend
+    environment:
+      - VITE_API_URL=http://localhost:3005
+    ports:
+      - 3000:3000
